@@ -1,0 +1,96 @@
+/* styles.css */
+
+/* Basic Reset */
+body, h2, p, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #181818;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Card Container */
+.card {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    display: none;
+}
+
+/* Display the first card by default */
+#card1 {
+    display: block;
+}
+
+/* Heading styling */
+.card p {
+    font-size: 1.8rem;
+    color: #f7f5f1;
+    margin-bottom: 15px;
+    text-decoration: double;
+}
+
+/* Paragraph styling */
+.card p {
+    font-size: 4.2rem;
+    margin-bottom: 20px;
+}
+.card span{
+    color: #ff8500;
+}
+
+/* Input styling */
+.card input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+/* Button styling */
+.card button {
+    background-color: #ffa500;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #ff8500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card p, .card input, .card button {
+        font-size: 1rem;
+    }
+
+    .card input {
+        width: calc(100% - 10px);
+    }
+}

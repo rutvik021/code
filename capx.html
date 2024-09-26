@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Card Interaction</title>
+    <style>
+        /* Basic Reset */
+        body, h2, p, input, button, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            font-size: 60px;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #181818;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Card Container */
+        .card {
+            background-color: #000;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            min-height: 400px; /* Increased height */
+        }
+
+        /* Display the first card by default */
+        #card1 {
+            display: flex;
+        }
+
+        /* Question styling */
+        .card .question {
+            font-size: 1.8rem;
+            color: #f7f5f1;
+            margin-bottom: 15px;
+            font-weight: bold;
+            flex: 1;
+            align-self: center;
+        }
+
+        /* Options styling */
+        .card .options {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .card .options button {
+            background-color: #ffa500;
+            color: #000;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .card .options button:hover {
+            background-color: #ff8500;
+        }
+
+        .card span {
+            color: #ff8500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card .question, .card .options {
+                flex: unset;
+            }
+
+            .card .options button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card" id="card1">
+        <div class="question">
+            <p>Have you engaged in <span>high-frequency</span> trading strategies?</p>
+        </div>
+        <div class="options">
+            <button onclick="nextCard(1)">Yes</button>
+            <button onclick="nextCard(1)">No</button>
+     
+        </div>
+    </div>
+
+    <div class="card" id="card2">
+        <div class="question">
+            <p>Do you prefer <span>algorithmic trading </span>over manual trading?</p>
+        </div>
+        <div class="options">
+            <button onclick="nextCard(2)">Yes</button>
+            <button onclick="nextCard(2)">No</button>
+            <button onclick="nextCard(2)">Sometimes</button>
+            <button onclick="nextCard(2)">Not Interested</button>
+          
+        </div>
+    </div>
+
+    <div class="card" id="card3">
+        <div class="question">
+            <p>Are you <span>interested in learning</span><br>more about <span> <br>trading strategies?</span></p>
+        </div>
+        <div class="options">
+            <button onclick="redirectToReferencePage()">Yes</button>
+            <button onclick="redirectToReferencePage()">No</button>
+            <button onclick="redirectToReferencePage()">Maybe</button>
+            <button onclick="redirectToReferencePage()">Already knowledgeable</button>
+        </div>
+    </div>
+
+    <script>
+        function nextCard(cardNumber) {
+            document.getElementById(`card${cardNumber}`).style.display = 'none';
+            document.getElementById(`card${cardNumber + 1}`).style.display = 'flex';
+        }
+
+        function redirectToReferencePage() {
+            window.location.href = "http://127.0.0.1:5500/title.html";
+        }
+    </script>
+</body>
+</html>

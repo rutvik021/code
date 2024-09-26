@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Card Interaction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card" id="card1">
+
+        <p>Have you engaged in <span>high-frequency </span>trading strategies?</p>
+        <input type="text" id="answer1" placeholder="Type your answer here">
+        <button onclick="nextCard(1)">Submit</button>
+    </div>
+
+    <div class="card" id="card2">
+
+        <p>Do you prefer <span>algorithmic trading over</span> manual trading?</p>
+        <input type="text" id="answer2" placeholder="Type your answer here">
+        <button onclick="nextCard(2)">Submit</button>
+    </div>
+
+    <div class="card" id="card3">
+
+        <p>Are you <span>interested in learning more </span>about trading strategies?</p>
+        <input type="text" id="answer3" placeholder="Type your answer here">
+        <button onclick="redirectToReferencePage()">Submit</button>
+    </div>
+    
+    <script>function nextCard(cardNumber) {
+        document.getElementById(`card${cardNumber}`).style.display = 'none';
+        document.getElementById(`card${cardNumber + 1}`).style.display = 'block';
+    }
+    
+    function redirectToReferencePage() {
+        const answer1 = document.getElementById('answer1').value;
+        const answer2 = document.getElementById('answer2').value;
+        const answer3 = document.getElementById('answer3').value;
+        
+        // You can process or store the answers here if needed
+        
+        // Redirect to the reference page
+        window.location.href = "http://127.0.0.1:5500/title.html";
+    }
+    </script>
+</body>
+</html>
